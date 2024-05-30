@@ -1,0 +1,8 @@
+{
+  "frog_laugh": {
+    "subtitles": "sounds.tutorialmod.frog_laugh",
+    "sounds": [
+      "tutorialmod:frog_laugh"
+    ]
+  }
+}

@@ -15,6 +15,7 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.rukakoray.tutorialmod.block.ModBlocks;
 import net.rukakoray.tutorialmod.item.ModCreativeModTabs;
 import net.rukakoray.tutorialmod.item.ModItems;
+import net.rukakoray.tutorialmod.sound.ModSounds;
 import org.slf4j.Logger;
 
 // The value here should match an entry in the META-INF/mods.toml file
@@ -32,6 +33,7 @@ public class TutorialMod
         ModCreativeModTabs.register(modEventBus);   //add new creative mode tab
         ModItems.register(modEventBus);             //add mod items
         ModBlocks.register(modEventBus);            //add mod blocks
+        ModSounds.register(modEventBus);            //add mod sounds
 
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);

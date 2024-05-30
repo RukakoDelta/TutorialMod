@@ -1,9 +1,11 @@
 package net.rukakoray.tutorialmod.block;
 
+import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.DropExperienceBlock;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -11,6 +13,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.rukakoray.tutorialmod.TutorialMod;
+import net.rukakoray.tutorialmod.block.custom.SoundBlock;
 import net.rukakoray.tutorialmod.item.ModItems;
 
 import java.util.function.Supplier;
@@ -25,6 +28,13 @@ public class ModBlocks {
     public static final RegistryObject<Block> RAW_SAPPHIRE_BLOCK = registerBlock("raw_sapphire_block",
             ()-> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).sound(SoundType.AMETHYST)));
 
+    public static final RegistryObject<Block> SAPPHIRE_ORE = registerBlock("sapphire_ore",
+            () -> new DropExperienceBlock(UniformInt.of(3,6),
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.STONE)
+                    .strength(2f).requiresCorrectToolForDrops()));
+
+    public static final RegistryObject<Block> SOUND_BLOCK = registerBlock("sound_block",
+            ()-> new SoundBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_WOOL)));
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block){
         RegistryObject<T> toReturn = BLOCKS.register(name, block);

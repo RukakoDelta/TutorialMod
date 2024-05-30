@@ -21,11 +21,14 @@ public class ModCreativeModTabs {
                     .displayItems( (itemDisplayParameters, output) -> {
                         output.accept(ModItems.SAPPHIRE.get());
                         output.accept(ModItems.RAW_SAPPHIRE.get());
-
-                        //output.accept(Items.DIAMOND);
+                        output.accept(ModItems.METAL_DETECTOR.get());
 
                         output.accept(ModBlocks.SAPPHIRE_BLOCK.get());
                         output.accept(ModBlocks.RAW_SAPPHIRE_BLOCK.get());
+                        output.accept(ModBlocks.SAPPHIRE_ORE.get());
+                        output.accept(ModBlocks.SOUND_BLOCK.get());
+
+                        //output.accept(Items.DIAMOND);
                     })
                     .build() );
 
