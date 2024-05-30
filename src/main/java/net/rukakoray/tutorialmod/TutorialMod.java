@@ -29,9 +29,9 @@ public class TutorialMod
     {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
-        ModCreativeModTabs.register(modEventBus);
-        ModItems.register(modEventBus);
-        ModBlocks.register(modEventBus);
+        ModCreativeModTabs.register(modEventBus);   //add new creative mode tab
+        ModItems.register(modEventBus);             //add mod items
+        ModBlocks.register(modEventBus);            //add mod blocks
 
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
@@ -46,11 +46,11 @@ public class TutorialMod
 
     }
 
-    // Add the example block item ot the building blocks tab
+    // Add the items to the ingredients tab
     private void addCreative(BuildCreativeModeTabContentsEvent event){
         if(event.getTabKey() == CreativeModeTabs.INGREDIENTS){
-            event.accept(ModItems.SAPPHIRE);
-            event.accept(ModItems.RAW_SAPPHIRE);
+            //event.accept(ModItems.SAPPHIRE);
+            //event.accept(ModItems.RAW_SAPPHIRE);
         }
     }
 
