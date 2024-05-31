@@ -11,5 +11,7 @@
 
   "creativetab.tutorial_tab": "Tutorial Mod Tab",
 
-  "sounds.tutorialmod.frog_laugh": "The Frog finds it really funny"
+  "sounds.tutorialmod.frog_laugh": "The Frog finds it really funny",
+
+  "tooltip.tutorialmod.metal_detector.tooltip": "Can locate iron, gold and diamonds"
 }
