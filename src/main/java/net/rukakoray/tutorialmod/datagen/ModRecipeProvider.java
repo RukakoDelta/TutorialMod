@@ -63,7 +63,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .pattern("  S")
                 .pattern(" RS")
                 .pattern("IIS")
-                .define('S', Items.STICK).define('R', Items.REDSTONE).define('R', Items.IRON_INGOT)
+                .define('S', Items.STICK).define('R', Items.REDSTONE).define('I', Items.IRON_INGOT)
                 .unlockedBy(getHasName(Items.REDSTONE), has(Items.REDSTONE))
                 .save(recipeOutput);
     }
