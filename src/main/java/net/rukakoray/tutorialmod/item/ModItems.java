@@ -7,6 +7,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.rukakoray.tutorialmod.TutorialMod;
 import net.rukakoray.tutorialmod.item.custom.MetalDetectorItem;
+import net.rukakoray.tutorialmod.item.custom.SharpshooterItem;
 
 public class ModItems {
     public static final DeferredRegister<Item> ITEMS =
@@ -22,6 +23,9 @@ public class ModItems {
 
     public static final RegistryObject<Item> METAL_DETECTOR = ITEMS.register("metal_detector",
             () -> new MetalDetectorItem(new Item.Properties().durability(100)));
+
+    public static final RegistryObject<Item> SHARPSHOOTER = ITEMS.register("sharpshooter",
+            () -> new SharpshooterItem(new Item.Properties().stacksTo(1)));
 
     public static void register(IEventBus eventBus){
         ITEMS.register(eventBus);

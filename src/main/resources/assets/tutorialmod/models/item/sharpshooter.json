@@ -1,0 +1,18 @@
+{
+  "parent": "minecraft:item/handheld",
+  "loader": "forge:separate_transforms",
+  "base": {
+    "parent": "tutorialmod:item/sharpshooter_3d"
+  },
+  "perspectives": {
+    "gui": {
+      "parent": "tutorialmod:item/sharpshooter_3d"
+    },
+    "ground": {
+      "parent": "tutorialmod:item/sharpshooter_3d"
+    },
+    "fixed": {
+      "parent": "tutorialmod:item/sharpshooter_3d"
+    }
+  }
+}
