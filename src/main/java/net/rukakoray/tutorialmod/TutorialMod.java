@@ -1,6 +1,8 @@
 package net.rukakoray.tutorialmod;
 
 import com.mojang.logging.LogUtils;
+import net.minecraft.client.renderer.entity.ThrownItemRenderer;
+import net.minecraft.world.entity.projectile.ThrowableItemProjectile;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
@@ -13,6 +15,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.rukakoray.tutorialmod.block.ModBlocks;
+import net.rukakoray.tutorialmod.entity.ModEntities;
 import net.rukakoray.tutorialmod.item.ModCreativeModTabs;
 import net.rukakoray.tutorialmod.item.ModItems;
 import net.rukakoray.tutorialmod.sound.ModSounds;
@@ -34,6 +37,7 @@ public class TutorialMod
         ModItems.register(modEventBus);             //add mod items
         ModBlocks.register(modEventBus);            //add mod blocks
         ModSounds.register(modEventBus);            //add mod sounds
+        ModEntities.register(modEventBus);          //add mod entities
 
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
@@ -69,6 +73,7 @@ public class TutorialMod
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event)
         {
+            //EntityRenders.register(ModEntities.COIN_PROJECTILE.get(), ThrownItemRenderer::new);
 
         }
     }
