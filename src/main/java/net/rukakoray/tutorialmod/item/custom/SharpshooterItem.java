@@ -5,13 +5,19 @@ import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.stats.Stats;
 import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResult;
 import net.minecraft.world.InteractionResultHolder;
+import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.damagesource.DamageSources;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
+import net.minecraftforge.common.ForgeMod;
+import net.minecraftforge.common.extensions.IForgeEntity;
 import net.rukakoray.tutorialmod.entity.custom.CoinProjectileEntity;
 
 import java.util.List;
@@ -49,16 +55,33 @@ public class SharpshooterItem extends Item {
         return InteractionResultHolder.sidedSuccess(itemStack, pLevel.isClientSide());
 
 
+
         //return super.use(pLevel, pPlayer, pUsedHand);
     }
 
+
+
+    /*@Override
+    public void inventoryTick(ItemStack pStack, Level pLevel, Entity pEntity, int pSlotId, boolean pIsSelected) {
+        if(pIsSelected){
+            pEntity.sendSystemMessage(Component.literal("InventoryTick"));
+            //((Player)(pEntity)).entityInteractionRange() = (double)20;
+
+        }
+        super.inventoryTick(pStack, pLevel, pEntity, pSlotId, pIsSelected);
+    }*/
+
     @Override
     public boolean onLeftClickEntity(ItemStack stack, Player player, Entity entity) {
-        //return super.onLeftClickEntity(stack, player, entity);
+        if(entity.distanceTo(player) <= 20){
+            player.sendSystemMessage(Component.literal("leftClickEntity reached far"));
+        }
+        return super.onLeftClickEntity(stack, player, entity);
         //for coin mechanics
         //check if entity attacked is a coin
-        return true;
+        //return true;
     }
+
 
     @Override
     public void appendHoverText(ItemStack pStack, TooltipContext pContext, List<Component> pTooltipComponents, TooltipFlag pTooltipFlag) {
