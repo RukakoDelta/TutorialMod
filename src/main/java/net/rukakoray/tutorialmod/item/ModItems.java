@@ -1,6 +1,9 @@
 package net.rukakoray.tutorialmod.item;
 
+import net.minecraft.world.entity.projectile.ThrowableItemProjectile;
+import net.minecraft.world.entity.projectile.ThrowableProjectile;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ThrowablePotionItem;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -26,6 +29,9 @@ public class ModItems {
 
     public static final RegistryObject<Item> SHARPSHOOTER = ITEMS.register("sharpshooter",
             () -> new SharpshooterItem(new Item.Properties().stacksTo(1)));
+
+    public static final RegistryObject<Item> COIN = ITEMS.register("coin",
+            () -> new Item(new Item.Properties()));
 
     public static void register(IEventBus eventBus){
         ITEMS.register(eventBus);
