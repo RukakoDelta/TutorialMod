@@ -17,6 +17,7 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.rukakoray.tutorialmod.block.ModBlocks;
 import net.rukakoray.tutorialmod.entity.ModEntities;
 import net.rukakoray.tutorialmod.entity.client.CoinRenderer;
+import net.rukakoray.tutorialmod.entity.client.CoinRenderer2;
 import net.rukakoray.tutorialmod.item.ModCreativeModTabs;
 import net.rukakoray.tutorialmod.item.ModItems;
 import net.rukakoray.tutorialmod.sound.ModSounds;
@@ -75,6 +76,7 @@ public class TutorialMod
         public static void onClientSetup(FMLClientSetupEvent event)
         {
             EntityRenderers.register(ModEntities.COIN_PROJECTILE.get(), CoinRenderer::new);
+            EntityRenderers.register(ModEntities.COIN_PROJECTILE2.get(), CoinRenderer2::new);
 
         }
     }
